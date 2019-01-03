@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html>
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+<title>编辑联系人</title>
+<link rel="stylesheet" type="text/css" href="css/reset.css" />
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<meta content="width=device-width,user-scalable=no" name="viewport">
+<script src="js/jquery.min.js"></script>
+<script src="js/layer_mobile/layer.js"></script>
+</head>
+<body>
+	<div class="wrap">
+		<ul class="edit_list">
+			<li id="list1">
+				<p>李小龙<i class="phone">1361120233</i></p>
+				<div class="address-list">
+					<p class="add-name-list">
+						<span class="address-name">广东省佛山市顺德区</span>
+						<span class="address-name">碧桂园花园米兰路13座606</span>
+					</p>
+					<div class="add-btns">
+						<a href="javascript:;" class="edit-add">编辑</a>
+						<a href="javascript:;" class="edit-del">删除</a>
+					</div>
+				
+				</div>
+			</li>
+		</ul>
+		<div class="edit-btn">
+			<a href="addContact.html" class="add-contact">新增联系人</a>
+		</div>
+	</div>
+</body>
+<script>
+  $(function(){
+  	$('.edit-list-add').on('click',function(){
+  		$(this).hide().parent().find('.edit-btns').show();;
+
+  	});
+  	$('.edit-del').on('click',function(){
+  		layer.open({
+		    content: '您确定要删除吗？'
+		    ,btn: ['确定', '取消']
+		    ,yes: function(index){
+		       $('#list1').remove();
+		      layer.close(index);
+		    }
+		  });
+  	})
+  })
+</script>
+</html>

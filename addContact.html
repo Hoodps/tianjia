@@ -1,0 +1,112 @@
+<!DOCTYPE HTML>
+<html>
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+<title>新增联系人</title>
+<link rel="stylesheet" type="text/css" href="css/reset.css" />
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<link rel="stylesheet" type="text/css" href="css/swiper.min.css" />
+<meta content="width=device-width,user-scalable=no" name="viewport">
+<script src="js/jquery.min.js"></script>
+<script src="js/layer_mobile/layer.js"></script>
+</head>
+<body>
+	<div class="wrap">
+		<ul class="edit_list">
+			<li>
+				<span class="name">姓名</span>
+				<input type="text" placeholder="请填写真实姓名" class="edit-input">
+			</li>
+			<li>
+				<span class="name">联系电话</span>
+				<input type="number" placeholder="请输入手机号码或电话号码" class="edit-input">
+			</li>
+			<li >
+				<span class="name">选择城市</span>
+				<script type="text/javascript" src="js/city.js" charset="utf-8"></script>
+				<select name="province" id="province" onChange="changeProvince({province:'#province',city:'#city',district:'#district',callback:null})"></select>
+				<select name="city" id="city" onChange="changeCity({city:'#city',district:'#district',callback:null})"></select>
+				<select name="district" id="district"></select>
+				<script>showCity({province:'#province', city:'#city', district:'#district'})</script>
+			</li>
+			<li>
+				<span class="name">详细地址</span>
+				<input type="text" placeholder="请详细到门牌号" class="edit-input">
+			</li>
+			<li>
+
+
+
+			</li>	
+		</ul>
+		<div class="bg-h"></div>
+		<a href="javascript:;" class="edit-confirm">确定保存</a>
+	</div>
+	<!-- 遮罩层 -->
+	<div class="dialog"></div>
+	<div class="select-roll city">
+		<div class="wraper">
+			<section class="meta">
+				<h2 class="title">选择城市</h2>
+				<a class="close ico-cls" href="javascript:void(0)"></a>
+			</section>
+			<div class="content">
+				<div class="swiper-container selclass1 swiper-container-vertical swiper-container-free-mode"  id="swiper1">
+					<ul class="swiper-wrapper">
+						<li class="swiper-slide swiper-slide-active">广东省</li>
+						<li class="swiper-slide swiper-slide-next">广西省</li>
+					</ul>
+				</div>
+				<div class="swiper-container selclass2 swiper-container-vertical swiper-container-free-mode"  id="swiper2">
+					<ul class="swiper-wrapper">
+						<li class="swiper-slide swiper-slide-active" >广州市</li>
+						<li class="swiper-slide swiper-slide-next"  >中山市</li>
+						<li class="swiper-slide" >深圳市</li>
+						<li class="swiper-slide" >东莞市</li>
+					</ul>
+				</div>
+				<div class="swiper-container selclass3 swiper-container-vertical swiper-container-free-mode"  id="swiper3">
+					<ul class="swiper-wrapper">
+						<li class="swiper-slide swiper-slide-active" >番禺区</li>
+						<li class="swiper-slide swiper-slide-next"  >越秀区</li>
+						<li class="swiper-slide" >海珠区</li>
+						<li class="swiper-slide" >增城</li>
+					</ul>
+				</div>
+					
+				<p class="bott-p"></p>
+			</div>
+			<p class="confirm">确定</p>
+		</div>
+	</div>
+</body>
+<script src="js/swiper.min.js"></script>
+
+<script>
+  $(function(){
+  	var mySwiper = new Swiper('.swiper-container ', {
+		direction : 'vertical',
+		height: 38,//你的slide高度
+	})
+  	$('.edit-confirm').on('click',function(){
+  		setTimeout(function(){
+  			window.location.href = "contactList.html";
+  		},2000)
+  		layer.open({
+		    content: '保存成功'
+		    ,skin: 'msg'
+		    ,time: 2 //2秒后自动关闭
+		  });
+
+  	});
+  	$('#choseCity').on('click',function(){
+  		$('.select-roll').show();
+  	});
+  	$('.close').on('click',function(){
+		$('.dialog').hide();
+		$('.select-roll').hide();
+	});
+  })
+</script>
+</html>

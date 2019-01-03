@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html>
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+<title>寄件详情</title>
+<link rel="stylesheet" type="text/css" href="css/reset.css" />
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<meta content="width=device-width,user-scalable=no" name="viewport">
+<script src="js/jquery.min.js"></script>
+<script src="js/layer_mobile/layer.js"></script>
+
+</head>
+<body>
+	<div class="wrap">
+		<div class="detail-head">
+			<i class="detail-title"></i><span>预约成功</span>
+		</div>
+		<div class="Mailing-content">
+				<div class="send">
+					<p>李小龙<i class="phone">1361120233</i></p>
+					<p class="address-list">
+						<span class="address-detail">广东工业大学（大学城校区）</span>
+						<span class="address-detail">西区2栋608</span>
+					</p>
+				</div>
+				<div class="receiver">
+					<p>马晓东<i class="phone">1361120233</i></p>
+					<p class="address-list">
+						<span class="address-detail">广东省佛山市顺德区</span>
+						<span class="address-detail">碧桂园花园米兰路13座606</span>
+					</p>
+				</div>
+		</div>
+		<div class="bg-h"></div>
+		<div class="express">
+			<p>快递小哥：<span>钟汉良</span></p>
+			<p>小哥工号：<span>100001</span></p>
+			<p>联系电话：<span>13925908760</span></p>
+		</div>
+		<div class="bg-h"></div>
+		<div class="express">
+			<div class="pad">
+				<p>快递单号：<span>快递小哥上门揽件后会给出单号</span>	</p>
+				<p>下单时间：<span>2018-1-21 16：50：30</span>	</p>
+				<p>预约时间：<span>2018-1-21 下午5：30 上门取件</span>	</p>
+			</div>
+			<div class="info">
+				<p>货物重量：<span>1.0kg</span><span>数码产品</span></p>
+				<p>包装费用：<span>￥3.00</span><span>小纸箱（3Kg）</span></p>
+				<p>费用估计：<span>￥12.5</span><span>仅供参考</span>	</p>
+				<p>我的留言：<span>麻烦帮我带一瓶可乐</span>	</p>
+			</div>
+		</div>
+		<div class="bg-h"></div>
+		<a href="javascript:;" class="edit-confirm">取消预约</a>
+	</div>
+</body>
+<script>
+$(function(){
+//取消预约
+	$('.edit-confirm').on('click',function(){
+  		layer.open({
+		    content: '您确定要取消吗？'
+		    ,btn: ['确定', '取消']
+		    ,yes: function(index){
+		      layer.close(index);
+		    }
+		  }); 
+  	});
+
+})
+</script>
+</html>

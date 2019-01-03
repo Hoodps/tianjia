@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html>
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+<title>编辑联系人</title>
+<link rel="stylesheet" type="text/css" href="css/reset.css" />
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<meta content="width=device-width,user-scalable=no" name="viewport">
+<script src="js/jquery.min.js"></script>
+<script src="js/layer_mobile/layer.js"></script>
+</head>
+<body>
+	<div class="wrap">
+		<ul class="edit_list">
+			<li>
+				<span class="name">姓名</span>
+				<input type="text" placeholder="请填写真实姓名" value="李小龙" class="edit-input">
+			</li>
+			<li>
+				<span class="name">联系电话</span>
+				<input type="number" value="158778347" placeholder="请输入手机号码或电话号码" class="edit-input">
+			</li>
+			<li>
+				<span class="name">选择城市</span>
+				<input type="text" value="广东省广州市番禺区" placeholder="请选择省市区" class="edit-input">
+				<i class="address"></i>
+			</li>
+			<li>
+				<span class="name">详细地址</span>
+				<input type="text" value="市桥街22号" placeholder="请详细到门牌号" class="edit-input">
+			</li>
+		</ul>
+		<div class="bg-h"></div>
+		<a href="javascript:;" class="edit-confirm">确定保存</a>
+	</div>
+</body>
+<script>
+  $(function(){
+  	$('.edit-confirm').on('click',function(){
+  		layer.open({
+		    content: '保存成功'
+		    ,skin: 'msg'
+		    ,time: 2 //2秒后自动关闭
+		  });
+  	})
+  })
+</script>
+</html>
